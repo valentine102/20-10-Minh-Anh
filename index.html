@@ -42,7 +42,14 @@ button{font:inherit}
 }
 .hold-control .orb:before{top:-16px;left:0}
 .hold-control .orb:after{top:0;left:16px}
-.hold-control.holding .orb{transform:scale(1.28)}
+.hold-control.holding .orb{
+  animation:none;
+  transform:rotate(-45deg) scale(1.28);
+}
+@keyframes heartBeat{
+  0%,100%{transform:rotate(-45deg) scale(1)}
+  50%{transform:rotate(-45deg) scale(1.12)}
+}
 .hold-label{position:absolute;left:0;right:0;bottom:calc(100% + 23px);font-size:12px;letter-spacing:.35px;color:#e1e8fb;white-space:nowrap;text-shadow:0 1px 7px #b8d5ff42}
 .hold-control:focus-visible{outline:2px solid #ffadd6;outline-offset:9px;border-radius:50%}
 @keyframes ringPulse{0%{transform:scale(.78);opacity:.7}100%{transform:scale(1.2);opacity:0}}
