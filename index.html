@@ -21,7 +21,27 @@ button{font:inherit}
 .hold-control{position:absolute;left:50%;bottom:12%;width:105px;height:105px;transform:translateX(-50%);display:grid;place-items:center;border:0;background:transparent;color:white;cursor:pointer;touch-action:manipulation}
 .hold-control .ring{position:absolute;inset:5px;border:1px solid #6cb9f366;border-radius:50%;box-shadow:0 0 20px #49a5f51c,inset 0 0 18px #45a6ff12;animation:ringPulse 2.3s ease-out infinite}
 .hold-control .ring:nth-child(2){inset:-7px;animation-delay:.7s}
-.hold-control .orb{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#ffd4ef 0 10%,#ff86c9 35%,#db3889 75%,#a81a63 100%);box-shadow:0 0 12px #ff70c4,0 0 35px #f05cab55;transition:transform .25s}
+.hold-control .orb{
+  width:32px;
+  height:32px;
+  position:relative;
+  border-radius:0;
+  background:linear-gradient(135deg,#ffd8ed,#ff70b7 55%,#d92878);
+  box-shadow:0 0 15px #ff70c4,0 0 35px #f05cab88;
+  transform:rotate(-45deg);
+  animation:heartBeat 1.2s ease-in-out infinite;
+}
+.hold-control .orb:before,
+.hold-control .orb:after{
+  content:"";
+  position:absolute;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:inherit;
+}
+.hold-control .orb:before{top:-16px;left:0}
+.hold-control .orb:after{top:0;left:16px}
 .hold-control.holding .orb{transform:scale(1.28)}
 .hold-label{position:absolute;left:0;right:0;bottom:calc(100% + 23px);font-size:12px;letter-spacing:.35px;color:#e1e8fb;white-space:nowrap;text-shadow:0 1px 7px #b8d5ff42}
 .hold-control:focus-visible{outline:2px solid #ffadd6;outline-offset:9px;border-radius:50%}
